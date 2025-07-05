@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>House Price Predictor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', Arial, sans-serif;
+            margin: 0;
+            background: linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%);
+        }
+
+        .app-container {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2.5rem 2.5rem 2rem 2.5rem;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+            max-width: 420px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .logo {
+            width: 70px;
+            margin-bottom: 10px;
+        }
+
+        .title {
+            margin-bottom: 18px;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2d3a4b;
+            letter-spacing: 1px;
+        }
+
+        label {
+            display: block;
+            margin-top: 18px;
+            font-weight: 500;
+            color: #2d3a4b;
+            text-align: left;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 7px;
+            border: 1px solid #b0b8c1;
+            border-radius: 7px;
+            height: 36px;
+            font-size: 1rem;
+            background: #f7fafd;
+            transition: border 0.2s;
+        }
+
+        input[type="number"]:focus {
+            border: 1.5px solid #007bff;
+            outline: none;
+        }
+
+        .button {
+            background: linear-gradient(90deg, #007bff 0%, #00c6ff 100%);
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 7px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            padding: 12px 0;
+            width: 100%;
+            margin-top: 28px;
+            box-shadow: 0 2px 8px rgba(0,123,255,0.08);
+            transition: background 0.2s;
+        }
+
+        .button:hover {
+            background: linear-gradient(90deg, #0056b3 0%, #00aaff 100%);
+        }
+
+        .result {
+            margin-top: 30px;
+            font-size: 1.2rem;
+            color: #0a7d2c;
+            background: #eafaf1;
+            border-radius: 7px;
+            padding: 15px 0;
+            font-weight: 600;
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 0.95rem;
+            color: #7a869a;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app-container">
+        <div class="form-container">
+            <!-- New logo: modern house SVG -->
+            <svg class="logo" viewBox="0 0 64 64" fill="none">
+                <rect x="12" y="28" width="40" height="24" rx="4" fill="#007bff"/>
+                <rect x="20" y="36" width="12" height="16" rx="2" fill="#fff"/>
+                <rect x="36" y="36" width="8" height="8" rx="1.5" fill="#fff"/>
+                <polygon points="32,12 8,32 12,32 12,28 52,28 52,32 56,32" fill="#00c6ff"/>
+            </svg>
+            <h1 class="title">House Price Predictor</h1>
+            <form method="POST" autocomplete="off">
+                <label for="feature1">Overall Quality (1–10):</label>
+                <input type="number" name="feature1" min="1" max="10" step="1" required placeholder="e.g. 7">
+
+                <label for="feature2">Living Area (sqft):</label>
+                <input type="number" name="feature2" min="100" step="1" required placeholder="e.g. 1500">
+
+                <label for="feature3">Garage Capacity (cars):</label>
+                <input type="number" name="feature3" min="0" max="5" step="1" required placeholder="e.g. 2">
+
+                <label for="feature4">Total Basement Area (sqft):</label>
+                <input type="number" name="feature4" min="0" step="1" required placeholder="e.g. 800">
+
+                <input class="button" type="submit" value="Predict Price">
+            </form>
+
+
+            {% if prediction %}
+            <div class="result">
+                Predicted House Price: <strong>${{ prediction }}</strong>
+            </div>
+            {% endif %}
+
+        </div>
+    </div>
+</body>
+
+</html>
