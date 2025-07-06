@@ -1,3 +1,6 @@
+![image](https://github.com/user-attachments/assets/f40033b5-c7d3-4ee9-8185-b6dd06e62449)
+
+ 
  House Price Predictor
  Features
 
