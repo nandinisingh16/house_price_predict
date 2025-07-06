@@ -80,8 +80,8 @@ The predicted house price is displayed on the same page.
 
 
 UI Preview
+![image](https://github.com/user-attachments/assets/a81d1162-0398-4036-b8fb-f9f46f39d1c0)
 
-![House Price Predictor UI](https://user-images.githubusercontent.com/placeholder/house-ui-preview.png) <!-- Replace with actual image or remove -->
 
 
 Dataset
